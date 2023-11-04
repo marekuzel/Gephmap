@@ -4,4 +4,4 @@ Simple python script that is able to automatically create Node and Egde table fr
 Gephmap is still in development. 
 
 ## License
-[GNU GPL](https://www.gnu.org/licenses/gpl-3.0.en.html)
+[MIT License]([https://www.gnu.org/licenses/gpl-3.0.en.html](https://opensource.org/license/mit/)https://opensource.org/license/mit/)
