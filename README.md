@@ -5,3 +5,6 @@ Gephmap is still in development.
 
 ## License
 [MIT License](https://opensource.org/license/mit/)
+
+## Download
+For the non-tech-savvy people here is a direct download [link](https://drive.google.com/uc?export=download&id=1vtG_4Ps6Au-Ro9DOcrRGFiLIoEsGqXQY)
