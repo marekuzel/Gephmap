@@ -1,0 +1,10 @@
+[project]
+name = "gephmap"
+version = "0.0.1"
+scripts = { "gephmap" = "gephmap" }
+description = "A tool for creating edges and nodes from Excel files"
+license = { file = "LICENSE" }
+
+[[project.authors]]
+name = "Marek Kužel"
+email = "marekuzel1@gmail.com"

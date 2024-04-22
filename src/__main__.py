@@ -1,3 +1,3 @@
-from nodesAutomation import main
+from gephmap import main
 
 main()
