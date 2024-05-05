@@ -3,29 +3,43 @@ from excelCounter import *
 
 
 def main ():
-    file = returnFile()
+    file, xlsxType = returnFile()
+    if xlsxType == True:
+        print ("Starting " + file)
+        wb = load_workbook(file)
+        ws = wb.active
+        #group_dict_appearances is used to store amount of unique nodes
+        #group_dict_totInt stores the number of interactions each unique node recieved
+        group_names = []
+        group_dict_appearances = {}
+        group_dict_totInt = {}
+        link_names = []
+        link_dict_appearances = {}
+        link_dict_totInt = {}  
 
-    print ("Starting " + file)
-    wb = load_workbook(file)
-    ws = wb.active
-    #group_dict_appearances is used to store amount of unique nodes
-    #group_dict_totInt stores the number of interactions each unique node recieved
-    group_names = []
-    group_dict_appearances = {}
-    group_dict_totInt = {}
-    link_names = []
-    link_dict_appearances = {}
-    link_dict_totInt = {}  
-
-    countGroupAppearances(ws,group_names, group_dict_appearances)
-    print ("Group Appearances done in " + file)
-    countGroupInteractions(ws, group_dict_appearances, group_dict_totInt)
-    print ("Group Interactions done" + file)
-    countLinkAppearances(ws, link_names, link_dict_appearances)
-    print ("Link Appearances done" + file)
-    countLinkInteractions(ws, link_dict_appearances, link_dict_totInt)
-    print ("Link Interactions done" + file)
-
+        countGroupAppearances(ws,group_names, group_dict_appearances)
+        print ("Group Appearances done in " + file)
+        countGroupInteractions(ws, group_dict_appearances, group_dict_totInt)
+        print ("Group Interactions done" + file)
+        countLinkAppearances(ws, link_names, link_dict_appearances)
+        print ("Link Appearances done" + file)
+        countLinkInteractions(ws, link_dict_appearances, link_dict_totInt)
+        print ("Link Interactions done" + file)
+    else:
+        print ("Starting " + file)
+        #group_dict_appearances is used to store amount of unique nodes
+        #group_dict_totInt stores the number of interactions each unique node recieved
+        group_names = []
+        group_dict_appearances = {}
+        group_dict_totInt = {}
+        link_names = []
+        link_dict_appearances = {}
+        link_dict_totInt = {} 
+        CSV_countGroupAppearances (file, group_names, group_dict_appearances)
+        CSV_countGroupInteractions (file, group_names, group_dict_appearances)
+        CSV_countLinkAppearances (file, group_names, group_dict_appearances)
+        CSV_countLinkInteractions (file, group_names, group_dict_appearances)
+        
     try:
         with open(file + "_Nodes.csv", 'w', encoding="utf-8") as f:
             f.write ("Label, Id, Appearances, Total Interactions, Type\n")
